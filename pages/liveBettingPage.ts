@@ -5,21 +5,14 @@ import { expect } from "playwright/test";
 export class LiveBettingPage {
   readonly page;
   readonly eventViewButton: Locator;
-  readonly basketBallCategoryButton: Locator;
   readonly liveEventsLocator: Locator;
   readonly valuesInsideEventPage: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.eventViewButton = page.getByRole("link", { name: "Event View" });
-    this.basketBallCategoryButton = page.getByLabel("7").locator("a");
     this.liveEventsLocator = page.locator(".grid-info-wrapper");
     this.valuesInsideEventPage = page.locator(".value");
-  }
-
-  async navigateToTheBasketballSeciton() {
-    await this.basketBallCategoryButton.click();
-    await this.page.waitForLoadState("load");
   }
 
   async getAllLiveEventsAndSelectARandomOne() {
@@ -33,7 +26,7 @@ export class LiveBettingPage {
     await this.liveEventsLocator.nth(0).click();
   }
 
-  async addRandomPickToBetslip() {
+  async addRandomPickToBetslipAndAssert() {
     const betValue = await this.valuesInsideEventPage.nth(0).textContent();
 
     await this.valuesInsideEventPage.nth(0).click();
