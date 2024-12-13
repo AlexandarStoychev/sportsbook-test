@@ -10,4 +10,13 @@ test.describe("Betslip scenarios", { tag: "@all" }, () => {
     await liveBettingPage.getAllLiveEventsAndSelectARandomOne();
     await liveBettingPage.addRandomPickToBetslipAndAssert();
   });
+
+  test("Bet values should be updated immediately when the odd changes", async ({
+    homePage,
+    liveBettingPage,
+  }) => {
+    await homePage.navigateToTheBasketballSeciton();
+    await liveBettingPage.getAllLiveEventsAndSelectARandomOne();
+    await liveBettingPage.addPickAndWaitForOddsToChangeAndAssert();
+  });
 });

@@ -6,7 +6,7 @@ test.beforeEach(async ({ commonMethods }) => {
 });
 
 test.describe("Sport sorting", { tag: "@all" }, () => {
-  test.only("Specific sport page should be opened when selected from the A-Z page", async ({
+  test("Specific sport page should be opened when selected from the A-Z page", async ({
     homePage,
   }) => {
     await homePage.navigateToTheAZPage();
