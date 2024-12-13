@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "npm install && npx husky",
+    "setup": "npm install",
     "test:bwin-desktop": "npx cross-env npx playwright test --config=playwright.config.ts --headed --grep '@all' --project=chromium",
     "test:bwin-mobile": "npx cross-env npx playwright test --config=playwright.config.ts --headed  --grep '@all' --project=Mobile-Chrome"
   },
