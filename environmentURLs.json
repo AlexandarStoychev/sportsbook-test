@@ -1,0 +1,8 @@
+{
+  "prod": {
+    "baseUrl": "https://sports.bwin.com/en/sports/live/betting"
+  },
+  "staging": {
+    "baseUrl": "{placeholder}"
+  }
+}
