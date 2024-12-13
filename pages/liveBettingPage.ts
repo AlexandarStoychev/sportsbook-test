@@ -1,5 +1,4 @@
 import { Locator, Page } from "playwright";
-import { faker } from "@faker-js/faker";
 import { expect } from "playwright/test";
 
 export class LiveBettingPage {
@@ -27,7 +26,6 @@ export class LiveBettingPage {
   }
 
   async addRandomPickToBetslipAndAssert() {
-    await this.page.pause();
     const betValue = await this.valuesInsideEventPage.nth(0).textContent();
 
     await this.valuesInsideEventPage.nth(0).click();

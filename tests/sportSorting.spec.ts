@@ -1,5 +1,4 @@
-import { HomePage } from "pages/homePage";
-import { expect, test } from "../fixtures/fixtures";
+import { test } from "../fixtures/fixtures";
 
 test.beforeEach(async ({ commonMethods }) => {
   await commonMethods.loadWebsite();
